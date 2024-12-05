@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form id="myForm" method="post" action='http://127.0.0.1:8000/api/students/' enctype="multipart/form-data">
+            <label for="name">Name</label><br>
+            <input type='text' name='name'><br>
+            <label for="age">Age</label><br>
+            <input type="number" name="age"><br>
+            <button>Send</button>
+
+        </form>
+
+        <script>
+                const form = document.getElementById('myForm');
+
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Prevent default form submission
+
+                    // Collect the form data
+                    const formData = new FormData(form);
+
+                    // Log the form data to the console to see if it's being collected correctly
+                    console.log("Form Data:", formData);
+
+                    // Check the individual form data entries
+                    formData.forEach((value, key) => {
+                        console.log(`${key}: ${value}`);
+                    });
+
+                    try {
+                        const response = await fetch('http://127.0.0.1:8000/api/students/', {
+                            method: 'POST',
+                            body: formData, // Send form data to the backend
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`Server error: ${response.status}`);
+                        }
+
+                        const result = await response.json();
+                        console.log('Success:', result);
+                        alert('Form submitted successfully!');
+                    } catch (error) {
+                        console.error('Error submitting form:', error);
+                        alert('Failed to submit the form.');
+                    }
+                });
+
+
+        </script>
+    </body>
+</html>
