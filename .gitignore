@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+
+# Logs
+*.log
+*.sqlite3
+db.sqlite3
+
+# Virtual environment
+venv/
+env/
+*.env
+*.venv
+*.virtualenv
+
+# Django-specific
+*.pot
+*.pyc
+*.so
+
+# Static files and media
+staticfiles/
+media/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional, if you don't want to track these)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# pipenv, poetry
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Coverage and testing
+htmlcov/
+.coverage
+.tox/
+.nox/
+*.cover
+coverage.xml
+*.lcov
+
+# Node modules (if using JavaScript in the project)
+node_modules/
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+build/
+__pycache__/
+
+# Deployment
+.env.production
+.env.staging
