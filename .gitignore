@@ -70,3 +70,6 @@ __pycache__/
 # Deployment
 .env.production
 .env.staging
+
+
+credentials.py
